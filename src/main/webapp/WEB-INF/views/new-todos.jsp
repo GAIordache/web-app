@@ -38,10 +38,18 @@
 	<div class="container">
 		Your new Todo:
 		<form action="/AddTodo" method="post">
-			Description: <input type="text" name="todo"> <br>
-			Category: <input type="text" name="category"> <br>
+			<fieldset class="form-group">
+				<label>Description:</label> 
+				<input type="text" name="todo" class="form-control"> <br>
+			</fieldset>
+			<fieldset class="form-group">
+				<label>Category:</label> 
+				<input type="text" name="category" class="form-control"> <br>
+			</fieldset>
+			
 			<input type="submit"
-				value="Submit Query">
+				value="Submit" class="btn btn-success">
+				
 		</form>
 	</div>
 

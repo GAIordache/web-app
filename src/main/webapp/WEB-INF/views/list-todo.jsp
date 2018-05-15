@@ -27,6 +27,11 @@
 			<li class="active"><a href="#">Home</a></li>
 			<li><a href="/list-todo.do">Todos</a></li>
 			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
+			<li><a href="https://edu.jademy.ro/wiki/doku.php">WikiJademy</a></li>
+			<li><a href="https://www.udemy.com/home/my-courses/learning/">Udemy Courses</a></li>
+			<li><a href="https://github.com/">GitHub</a></li>
+			<li><a href="https://www.youtube.com/channel/UCyUBW72KU30dfAYWLVNZO8Q">Stefan Mischook</a></li>
+			
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
@@ -37,17 +42,28 @@
 
 	<div class="container">
 		<H1>Weclome ${name}</H1>
-		Your Todos!!!
-
-		<ol>
-			<c:forEach items="${todos}" var="todo">
-				<li>${todo.getName()}&nbsp; &nbsp; <a
-					href="/delete-todo.do?todo=${todo.getName()}">Delete</a></li>
-
-			</c:forEach>
-		</ol>
 		
-		<a href="/AddTodo">Add new Todo</a>
+	
+		<table class="table table-striped" >
+			<caption>Your Todos!!!</caption>
+			<thead>
+				<th>Description</th>
+				<th>Category</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+			<c:forEach items="${todos}" var="todo">
+				<tr>
+					<td>${todo.getName()}</td>
+					<td>${todo.getCategory()}</td>
+					<td><a class="btn btn-danger"
+					href="/delete-todo.do?todo=${todo.getName()}&category=${todo.getCategory()}">Delete</a></td>
+				</tr>
+			</c:forEach>
+			</tbody>
+		</table>
+		
+		<a class="btn btn-success"href="/AddTodo">Add new Todo</a>
 		
 	</div>
 
