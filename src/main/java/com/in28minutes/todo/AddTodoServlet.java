@@ -23,18 +23,26 @@ public class AddTodoServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/new-todos.jsp")
+		.forward(request, response);
+	
+	}
+    
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String newTodo = request.getParameter("todo");
-		todoService.addTodo(new Todo(newTodo));
+		String category = request.getParameter("category");
+		todoService.addTodo(new Todo(newTodo,category));
 		
 		//request.setAttribute("todos", todoService.retrieveTodos());
 		//request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
 		
-		response.sendRedirect("/ListTodo");
+		response.sendRedirect("/list-todo.do");
 	}
 
 }

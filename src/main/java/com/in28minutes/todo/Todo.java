@@ -2,11 +2,20 @@ package com.in28minutes.todo;
 
 public class Todo {
 	private String name;
-
+	private String category;
 	
-	public Todo(String pName) {
+	public Todo(String pName,String pCategory) {
 		super();
-		name = pName;
+		this.name = pName;
+		this.category = pCategory;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String pCategory) {
+		category = pCategory;
 	}
 
 	public String getName() {
@@ -17,9 +26,12 @@ public class Todo {
 		name = pName;
 	}
 
+
+	
+
 	@Override
 	public String toString() {
-		return "Todo [name=" + name + "]";
+		return "Todo [name=" + name + ", category=" + category + "]";
 	}
 
 	@Override

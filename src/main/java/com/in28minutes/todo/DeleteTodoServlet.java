@@ -28,7 +28,7 @@ public class DeleteTodoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		todoService.deleteTodo(new Todo(request.getParameter("todo")));
-		response.sendRedirect("/ListTodo");
+		response.sendRedirect("/list-todo.do");
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class DeleteTodoServlet extends HttpServlet {
 		//String newTodo = request.getParameter("todo");
 		//todoService.addTodo(new Todo(newTodo));
 		
-		//response.sendRedirect("/ListTodo");
+		//response.sendRedirect("/list-todo.do");
 	//}
 
 }

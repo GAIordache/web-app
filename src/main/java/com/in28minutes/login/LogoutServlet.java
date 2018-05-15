@@ -1,4 +1,4 @@
-package com.in28minutes.todo;
+package com.in28minutes.login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,17 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TodoServlet
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("/list-todo.do")
-public class ListTodoServlet extends HttpServlet {
+@WebServlet("/logout.do")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-	private TodoService todoService = new TodoService();
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListTodoServlet() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,11 +26,8 @@ public class ListTodoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("todos", todoService.retrieveTodos());
-		request.getRequestDispatcher("/WEB-INF/views/list-todo.jsp").forward(request, response);
-		
+		request.getSession().invalidate();
+		request.getRequestDispatcher("/WEB-INF/views/login2.jsp").forward(request, response);
 	}
-
-	
 
 }
