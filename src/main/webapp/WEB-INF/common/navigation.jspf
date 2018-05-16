@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+
+		<a href="/" class="navbar-brand">Brand</a>
+
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="/list-todo.do">Todos</a></li>
+			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
+			<li><a href="https://edu.jademy.ro/wiki/doku.php">WikiJademy</a></li>
+			<li><a href="https://www.udemy.com/home/my-courses/learning/">Udemy Courses</a></li>
+			<li><a href="https://github.com/">GitHub</a></li>
+			<li><a href="https://www.youtube.com/channel/UCyUBW72KU30dfAYWLVNZO8Q">Stefan Mischook</a></li>
+			
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="/logout.do">Logout</a></li>
+		</ul>
+
+	</nav>
